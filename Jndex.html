@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>SUBDZ - متجر الاشتراكات الرقمية</title>
+
+    <meta name="description"
+          content="SUBDZ - متجر الاشتراكات الرقمية في الجزائر. Netflix، Shahid و Xbox Game Pass.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Tahoma, sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            background: #0d0d0d;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #e50914;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-btn {
+            background: #e50914;
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1150px;
+            margin: auto;
+            padding: 70px 20px 45px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 7vw, 65px);
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 15px 28px;
+            background: #e50914;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            background: #ff1622;
+        }
+
+        /* SERVICES */
+        .services {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 25px 0 30px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #888;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #252525;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #e50914;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 18px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+            background: #1b1b1b;
+        }
+
+        .netflix .icon {
+            color: #e50914;
+        }
+
+        .shahid .icon {
+            color: #00d084;
+        }
+
+        .xbox .icon {
+            color: #65c466;
+        }
+
+        .card
