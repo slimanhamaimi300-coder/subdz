@@ -7,8 +7,6 @@
 
 <title>SUBDZ | الاشتراكات الرقمية</title>
 
-<meta name="description" content="SUBDZ - متجر الاشتراكات الرقمية">
-
 <style>
 
 *{
@@ -24,11 +22,9 @@ html{
 body{
     font-family:Arial,Tahoma,sans-serif;
     background:#070707;
-    color:white;
+    color:#fff;
     line-height:1.6;
 }
-
-/* HEADER */
 
 header{
     position:sticky;
@@ -65,8 +61,6 @@ header{
     border-radius:10px;
     font-weight:bold;
 }
-
-/* HERO */
 
 .hero{
     text-align:center;
@@ -113,8 +107,6 @@ header{
     font-weight:bold;
 }
 
-/* SECTIONS */
-
 .section{
     max-width:1150px;
     margin:auto;
@@ -135,8 +127,6 @@ header{
     color:#888;
 }
 
-/* PRODUCTS */
-
 .products{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -153,7 +143,7 @@ header{
 }
 
 .card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
     border-color:#e50914;
 }
 
@@ -192,7 +182,7 @@ header{
     margin-bottom:22px;
 }
 
-/* OFFERS */
+/* الباقات */
 
 .offers{
     display:flex;
@@ -203,12 +193,30 @@ header{
 
 .offer{
     background:#191919;
-    border:1px solid #2b2b2b;
+    border:2px solid #292929;
     border-radius:12px;
-    padding:14px;
+    padding:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+/* الباقة المختارة */
+
+.offer.selected{
+    border-color:#e50914;
+    background:#241010;
+    box-shadow:0 0 12px rgba(229,9,20,.18);
+}
+
+.offer.selected .offer-name{
+    color:#fff;
+}
+
+.offer.selected .price{
+    color:#ff333d;
 }
 
 .offer-name{
@@ -222,21 +230,29 @@ header{
     font-size:14px;
 }
 
-/* BUTTON */
+.select-text{
+    color:#777;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+/* زر الطلب */
 
 .order-btn{
     width:100%;
     border:none;
     background:#e50914;
     color:white;
-    padding:14px;
+    padding:15px;
     border-radius:12px;
-    font-size:16px;
+    font-size:17px;
     font-weight:bold;
     cursor:pointer;
 }
 
-/* STEPS */
+.order-btn:hover{
+    background:#ff1723;
+}
 
 .steps{
     display:grid;
@@ -270,8 +286,6 @@ header{
     margin-top:8px;
 }
 
-/* CONTACT */
-
 .contact{
     text-align:center;
     margin-top:45px;
@@ -290,8 +304,6 @@ header{
     max-width:320px;
 }
 
-/* FOOTER */
-
 footer{
     margin-top:30px;
     padding:30px 20px;
@@ -304,8 +316,6 @@ footer{
 footer strong{
     color:#e50914;
 }
-
-/* MOBILE */
 
 @media(max-width:850px){
 
@@ -328,7 +338,6 @@ footer strong{
     .section{
         padding:45px 15px;
     }
-
 }
 
 </style>
@@ -337,8 +346,6 @@ footer strong{
 
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -356,8 +363,6 @@ SUB<span>DZ</span>
 
 </header>
 
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -384,8 +389,6 @@ SUB<span>DZ</span>
 </section>
 
 
-<!-- SERVICES -->
-
 <section class="section" id="services">
 
 <div class="section-title">
@@ -395,7 +398,7 @@ SUB<span>DZ</span>
 </h2>
 
 <p>
-اختر الخدمة والباقـة المناسبة لك
+اضغط على الباقة التي تريدها ثم اطلب العرض
 </p>
 
 </div>
@@ -408,21 +411,23 @@ SUB<span>DZ</span>
 
 <div class="card netflix">
 
-<div class="service-icon">
-N
-</div>
+<div class="service-icon">N</div>
 
-<h3>
-Netflix
-</h3>
+<h3>Netflix</h3>
 
 <p class="card-description">
 اختر مدة الاشتراك المناسبة لك.
 </p>
 
+<p class="select-text">
+اضغط على الباقة لاختيارها
+</p>
+
 <div class="offers">
 
-<div class="offer">
+<div class="offer"
+onclick="selectOffer(this,'Netflix','شهر واحد')">
+
 <span class="offer-name">
 شهر واحد
 </span>
@@ -430,10 +435,13 @@ Netflix
 <span class="price">
 السعر عند الطلب
 </span>
+
 </div>
 
 
-<div class="offer">
+<div class="offer"
+onclick="selectOffer(this,'Netflix','3 أشهر')">
+
 <span class="offer-name">
 3 أشهر
 </span>
@@ -441,10 +449,13 @@ Netflix
 <span class="price">
 السعر عند الطلب
 </span>
+
 </div>
 
 
-<div class="offer">
+<div class="offer"
+onclick="selectOffer(this,'Netflix','6 أشهر')">
+
 <span class="offer-name">
 6 أشهر
 </span>
@@ -452,13 +463,14 @@ Netflix
 <span class="price">
 السعر عند الطلب
 </span>
-</div>
 
 </div>
 
-<button
-class="order-btn"
-onclick="order('Netflix','شهر واحد')">
+</div>
+
+
+<button class="order-btn"
+onclick="sendOrder('Netflix')">
 
 اختر العرض
 
@@ -467,285 +479,4 @@ onclick="order('Netflix','شهر واحد')">
 </div>
 
 
-<!-- SHAHID -->
-
-<div class="card shahid">
-
-<div class="service-icon">
-▶
-</div>
-
-<h3>
-Shahid
-</h3>
-
-<p class="card-description">
-اختر الباقة والمدة المناسبة لك.
-</p>
-
-<div class="offers">
-
-<div class="offer">
-<span class="offer-name">
-شهر واحد
-</span>
-
-<span class="price">
-السعر عند الطلب
-</span>
-</div>
-
-
-<div class="offer">
-<span class="offer-name">
-3 أشهر
-</span>
-
-<span class="price">
-السعر عند الطلب
-</span>
-</div>
-
-
-<div class="offer">
-<span class="offer-name">
-6 أشهر
-</span>
-
-<span class="price">
-السعر عند الطلب
-</span>
-</div>
-
-</div>
-
-<button
-class="order-btn"
-onclick="order('Shahid','شهر واحد')">
-
-اختر العرض
-
-</button>
-
-</div>
-
-
-<!-- XBOX -->
-
-<div class="card xbox">
-
-<div class="service-icon">
-X
-</div>
-
-<h3>
-Xbox Game Pass
-</h3>
-
-<p class="card-description">
-اختر الباقة المناسبة لجهازك.
-</p>
-
-<div class="offers">
-
-<div class="offer">
-<span class="offer-name">
-شهر واحد
-</span>
-
-<span class="price">
-السعر عند الطلب
-</span>
-</div>
-
-
-<div class="offer">
-<span class="offer-name">
-3 أشهر
-</span>
-
-<span class="price">
-السعر عند الطلب
-</span>
-</div>
-
-
-<div class="offer">
-<span class="offer-name">
-6 أشهر
-</span>
-
-<span class="price">
-السعر عند الطلب
-</span>
-</div>
-
-</div>
-
-<button
-class="order-btn"
-onclick="order('Xbox Game Pass','شهر واحد')">
-
-اختر العرض
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- HOW TO ORDER -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>
-كيف تطلب؟
-</h2>
-
-<p>
-ثلاث خطوات بسيطة
-</p>
-
-</div>
-
-
-<div class="steps">
-
-
-<div class="step">
-
-<div class="number">
-1
-</div>
-
-<h3>
-اختر الخدمة
-</h3>
-
-<p>
-اختر Netflix أو Shahid أو Xbox Game Pass.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">
-2
-</div>
-
-<h3>
-اختر الباقة
-</h3>
-
-<p>
-اختر مدة الاشتراك والعرض المناسب.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">
-3
-</div>
-
-<h3>
-تواصل معنا
-</h3>
-
-<p>
-اضغط على زر الطلب للتواصل معنا عبر WhatsApp.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- CONTACT -->
-
-<div class="contact">
-
-<h2>
-هل تحتاج إلى مساعدة؟
-</h2>
-
-<p>
-تواصل معنا وسنساعدك في اختيار العرض المناسب.
-</p>
-
-<button
-class="order-btn"
-onclick="order('استفسار عام','')">
-
-💬 تواصل معنا عبر WhatsApp
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>
-© 2026
-<strong>SUBDZ</strong>
-— جميع الحقوق محفوظة
-</p>
-
-</footer>
-
-
-<!-- WHATSAPP -->
-
-<script>
-
-const whatsappNumber = "213549854480";
-
-function order(service,duration){
-
-let message =
-"السلام عليكم 👋\n\n" +
-"أريد طلب خدمة من SUBDZ.\n\n" +
-"الخدمة: " + service + "\n";
-
-if(duration !== ""){
-
-message +=
-"الباقة: " + duration + "\n";
-
-}
-
-message +=
-"\nأرسل لي السعر والتفاصيل من فضلك.";
-
-const whatsappURL =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-encodeURIComponent(message);
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-}
-
-</script>
-
-
-</body>
-    </html>
+<!-- SH
