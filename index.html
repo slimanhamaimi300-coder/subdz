@@ -2,1066 +2,1306 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SUBDZ | الاشتراكات الرقمية</title>
 
-    <meta name="description" content="SUBDZ - اشتراكات رقمية بسهولة وسرعة">
-
-    <style>
+<meta charset="UTF-8">
 
-        /* =========================
-           RESET
-        ========================= */
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>SUBDZ | الاشتراكات الرقمية</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<meta name="description" content="SUBDZ - متجر الاشتراكات الرقمية">
 
-        body {
-            font-family: Arial, Tahoma, sans-serif;
-            background: #070707;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+<style>
 
-        button,
-        a {
-            font-family: inherit;
-        }
+/* =========================
+   RESET
+========================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* =========================
-           HEADER
-        ========================= */
+html{
+    scroll-behavior:smooth;
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #0c0c0c;
-            border-bottom: 1px solid #252525;
-        }
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
+}
 
-        .navbar {
-            max-width: 1150px;
-            margin: auto;
-            padding: 15px 20px;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        .logo {
-            font-size: 30px;
-            font-weight: 900;
-            color: #e50914;
-            letter-spacing: -1px;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-        .logo span {
-            color: #ffffff;
-        }
+    background:rgba(8,8,8,.96);
 
-        .nav-button {
-            display: inline-block;
-            padding: 11px 20px;
+    border-bottom:1px solid #252525;
 
-            background: #e50914;
-            color: #ffffff;
+    backdrop-filter:blur(10px);
+}
 
-            text-decoration: none;
-            font-weight: bold;
+.navbar{
+    max-width:1200px;
+    margin:auto;
 
-            border-radius: 10px;
-        }
+    padding:15px 20px;
 
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        /* =========================
-           HERO
-        ========================= */
+.logo{
+    font-size:30px;
+    font-weight:900;
+    color:#e50914;
+}
 
-        .hero {
-            text-align: center;
+.logo span{
+    color:#fff;
+}
 
-            padding: 80px 20px;
+.nav-button{
+    background:#e50914;
+    color:#fff;
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    #351010 0%,
-                    #130707 35%,
-                    #070707 70%
-                );
-        }
+    text-decoration:none;
 
-        .badge {
-            display: inline-block;
+    padding:11px 22px;
 
-            padding: 8px 16px;
-            margin-bottom: 20px;
+    border-radius:10px;
 
-            background: #171717;
-            border: 1px solid #333333;
+    font-weight:bold;
+}
 
-            border-radius: 30px;
 
-            color: #cccccc;
-            font-size: 14px;
-        }
+/* =========================
+   HERO
+========================= */
 
-        .hero h1 {
-            font-size: clamp(40px, 8vw, 70px);
-            line-height: 1.15;
+.hero{
+    text-align:center;
 
-            margin-bottom: 20px;
-        }
+    padding:75px 20px 65px;
 
-        .hero h1 span {
-            color: #e50914;
-        }
+    background:
+    radial-gradient(
+        circle at center,
+        #351010 0%,
+        #140707 35%,
+        #050505 72%
+    );
+}
 
-        .hero p {
-            max-width: 650px;
-            margin: auto;
+.badge{
+    display:inline-block;
 
-            color: #aaaaaa;
-            font-size: 18px;
-        }
+    padding:8px 17px;
 
-        .hero-button {
-            display: inline-block;
+    margin-bottom:20px;
 
-            margin-top: 30px;
-            padding: 15px 30px;
+    background:#171717;
 
-            background: #e50914;
-            color: #ffffff;
+    border:1px solid #333;
 
-            text-decoration: none;
-            font-weight: bold;
+    border-radius:30px;
 
-            border-radius: 12px;
-        }
+    color:#ccc;
 
+    font-size:14px;
+}
 
-        /* =========================
-           SECTIONS
-        ========================= */
+.hero h1{
+    font-size:clamp(40px,8vw,70px);
 
-        .section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    line-height:1.15;
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    margin-bottom:20px;
+}
 
-        .section-title h2 {
-            font-size: 36px;
-            margin-bottom: 8px;
-        }
+.hero h1 span{
+    color:#e50914;
+}
 
-        .section-title p {
-            color: #888888;
-        }
+.hero p{
+    max-width:680px;
 
+    margin:auto;
 
-        /* =========================
-           PRODUCTS
-        ========================= */
+    color:#aaa;
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
+    font-size:18px;
+}
 
-        .card {
-            background: #111111;
-            border: 1px solid #292929;
+.hero-button{
+    display:inline-block;
 
-            border-radius: 22px;
+    margin-top:30px;
 
-            padding: 25px;
+    padding:15px 32px;
 
-            text-align: center;
+    background:#e50914;
 
-            transition: 0.3s;
-        }
+    color:#fff;
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #e50914;
-        }
+    text-decoration:none;
 
+    border-radius:12px;
 
-        /* =========================
-           SERVICE ICON
-        ========================= */
+    font-weight:bold;
+}
 
-        .service-icon {
-            width: 85px;
-            height: 85px;
 
-            margin: 0 auto 18px;
+/* =========================
+   SECTION
+========================= */
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+.section{
+    max-width:1200px;
 
-            background: #1b1b1b;
+    margin:auto;
 
-            border-radius: 22px;
+    padding:60px 20px;
+}
 
-            font-size: 40px;
-            font-weight: 900;
-        }
+.section-title{
+    text-align:center;
 
-        .netflix .service-icon {
-            color: #e50914;
-        }
+    margin-bottom:40px;
+}
 
-        .shahid .service-icon {
-            color: #20d66b;
-        }
+.section-title h2{
+    font-size:36px;
 
-        .xbox .service-icon {
-            color: #78c043;
-        }
+    margin-bottom:8px;
+}
 
+.section-title p{
+    color:#888;
+}
 
-        /* =========================
-           CARD TEXT
-        ========================= */
 
-        .card h3 {
-            font-size: 25px;
-            margin-bottom: 8px;
-        }
+/* =========================
+   PRODUCTS
+========================= */
 
-        .card-description {
-            color: #999999;
-            margin-bottom: 18px;
-        }
+.products{
+    display:grid;
 
-        .select-text {
-            color: #777777;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
+    grid-template-columns:
+    repeat(3,1fr);
 
+    gap:24px;
+}
 
-        /* =========================
-           OFFERS
-        ========================= */
+.card{
 
-        .offers {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
+    background:#0f0f0f;
 
-            margin-bottom: 20px;
-        }
+    border:1px solid #292929;
 
-        .offer {
-            width: 100%;
+    border-radius:22px;
 
-            padding: 15px;
+    overflow:hidden;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    text-align:center;
 
-            background: #191919;
-            border: 2px solid #292929;
+    transition:.3s;
+}
 
-            border-radius: 12px;
+.card:hover{
+    transform:translateY(-6px);
 
-            cursor: pointer;
+    border-color:#e50914;
+}
 
-            transition: 0.2s;
-        }
 
-        .offer:hover {
-            border-color: #555555;
-        }
+/* =========================
+   SERVICE IMAGE
+========================= */
 
-        .offer.selected {
-            background: #241010;
-            border-color: #e50914;
+.service-image{
 
-            box-shadow:
-                0 0 12px rgba(229, 9, 20, 0.18);
-        }
+    width:100%;
 
-        .offer-name {
-            color: #dddddd;
-            font-weight: bold;
-        }
+    height:300px;
 
-        .offer.selected .offer-name {
-            color: #ffffff;
-        }
+    object-fit:cover;
 
-        .price {
-            color: #e50914;
-            font-weight: bold;
-            font-size: 13px;
-        }
+    display:block;
 
+    background:#111;
+}
 
-        /* =========================
-           ORDER BUTTON
-        ========================= */
+.netflix .service-image{
+    border-bottom:2px solid #e50914;
+}
 
-        .order-button {
-            width: 100%;
+.shahid .service-image{
+    border-bottom:2px solid #00e676;
+}
 
-            padding: 15px;
+.xbox .service-image{
+    border-bottom:2px solid #39ff14;
+}
 
-            border: none;
-            border-radius: 12px;
 
-            background: #e50914;
-            color: #ffffff;
+/* =========================
+   CARD CONTENT
+========================= */
 
-            font-size: 17px;
-            font-weight: bold;
+.card-content{
+    padding:22px;
+}
 
-            cursor: pointer;
+.card h3{
+    font-size:27px;
 
-            transition: 0.2s;
-        }
+    margin-bottom:8px;
+}
 
-        .order-button:hover {
-            background: #ff1723;
-        }
+.card-description{
+    color:#999;
 
+    margin-bottom:18px;
+}
 
-        /* =========================
-           STEPS
-        ========================= */
+.select-text{
+    color:#777;
 
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+    font-size:13px;
 
-            gap: 20px;
-        }
+    margin-bottom:12px;
+}
 
-        .step {
-            padding: 28px 20px;
 
-            background: #111111;
-            border: 1px solid #252525;
+/* =========================
+   OFFERS
+========================= */
 
-            border-radius: 18px;
+.offers{
 
-            text-align: center;
-        }
+    display:flex;
 
-        .number {
-            width: 48px;
-            height: 48px;
+    flex-direction:column;
 
-            margin: 0 auto 15px;
+    gap:11px;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    margin-bottom:20px;
+}
 
-            background: #e50914;
+.offer{
 
-            border-radius: 50%;
+    width:100%;
 
-            font-size: 20px;
-            font-weight: bold;
-        }
+    padding:15px;
 
-        .step p {
-            color: #888888;
-            margin-top: 8px;
-        }
+    background:#191919;
 
+    border:2px solid #292929;
 
-        /* =========================
-           CONTACT
-        ========================= */
+    border-radius:12px;
 
-        .contact {
-            margin-top: 45px;
+    display:flex;
 
-            padding: 45px 20px;
+    justify-content:space-between;
 
-            background: #101010;
-            border: 1px solid #252525;
+    align-items:center;
 
-            border-radius: 22px;
+    cursor:pointer;
 
-            text-align: center;
-        }
+    transition:.2s;
+}
 
-        .contact p {
-            color: #888888;
-            margin: 10px 0 22px;
-        }
+.offer:hover{
+    border-color:#555;
+}
 
-        .contact .order-button {
-            max-width: 320px;
-        }
+.offer.selected{
 
+    background:#241010;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    border-color:#e50914;
 
-        footer {
-            margin-top: 30px;
-            padding: 30px 20px;
+    box-shadow:
+    0 0 15px
+    rgba(229,9,20,.2);
+}
 
-            background: #0d0d0d;
-            border-top: 1px solid #222222;
+.shahid .offer.selected{
 
-            color: #777777;
+    border-color:#00e676;
 
-            text-align: center;
-        }
+    background:#071b10;
 
-        footer strong {
-            color: #e50914;
-        }
+    box-shadow:
+    0 0 15px
+    rgba(0,230,118,.15);
+}
 
+.xbox .offer.selected{
 
-        /* =========================
-           MOBILE
-        ========================= */
+    border-color:#39ff14;
 
-        @media (max-width: 850px) {
+    background:#081b06;
 
-            .products {
-                grid-template-columns: 1fr;
-            }
+    box-shadow:
+    0 0 15px
+    rgba(57,255,20,.15);
+}
 
-            .steps {
-                grid-template-columns: 1fr;
-            }
+.offer-name{
+    color:#ddd;
 
-            .hero {
-                padding: 65px 18px;
-            }
+    font-weight:bold;
 
-            .hero h1 {
-                font-size: 43px;
-            }
+    font-size:16px;
+}
 
-            .section {
-                padding: 45px 15px;
-            }
-        }
+.offer.selected .offer-name{
+    color:#fff;
+}
 
-    </style>
+.price{
+    color:#e50914;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.shahid .price{
+    color:#00e676;
+}
+
+.xbox .price{
+    color:#39ff14;
+}
+
+
+/* =========================
+   ORDER BUTTON
+========================= */
+
+.order-button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e50914;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.order-button:hover{
+    transform:translateY(-2px);
+
+    background:#ff1723;
+}
+
+.shahid .order-button,
+.xbox .order-button{
+
+    background:#00d95f;
+
+    color:#fff;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.step{
+
+    background:#111;
+
+    border:1px solid #252525;
+
+    border-radius:18px;
+
+    padding:28px 20px;
+
+    text-align:center;
+}
+
+.number{
+
+    width:48px;
+
+    height:48px;
+
+    margin:0 auto 15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#e50914;
+
+    border-radius:50%;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+.step p{
+
+    color:#888;
+
+    margin-top:8px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    margin-top:45px;
+
+    padding:45px 20px;
+
+    background:#101010;
+
+    border:1px solid #252525;
+
+    border-radius:22px;
+
+    text-align:center;
+}
+
+.contact p{
+
+    color:#888;
+
+    margin:10px 0 22px;
+}
+
+.contact .order-button{
+
+    max-width:330px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    margin-top:30px;
+
+    padding:30px 20px;
+
+    background:#0d0d0d;
+
+    border-top:1px solid #222;
+
+    color:#777;
+
+    text-align:center;
+}
+
+footer strong{
+    color:#e50914;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .products{
+
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+
+        grid-template-columns:1fr;
+    }
+
+    .service-image{
+
+        height:auto;
+
+        aspect-ratio:1/1;
+
+        object-fit:cover;
+    }
+
+    .hero{
+
+        padding:60px 18px;
+    }
+
+    .hero h1{
+
+        font-size:43px;
+    }
+
+    .section{
+
+        padding:45px 15px;
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header>
+<header>
 
-        <nav class="navbar">
+<nav class="navbar">
 
-            <div class="logo">
-                SUB<span>DZ</span>
-            </div>
+<div class="logo">
+SUB<span>DZ</span>
+</div>
 
-            <a href="#services" class="nav-button">
-                العروض
-            </a>
+<a
+href="#services"
+class="nav-button"
+>
+العروض
+</a>
 
-        </nav>
+</nav>
 
-    </header>
+</header>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
 
-    <section class="hero">
+<!-- =========================
+     HERO
+========================= -->
 
-        <div class="badge">
-            ⚡ خدمات رقمية بسهولة وسرعة
-        </div>
+<section class="hero">
 
-        <h1>
-            اشتراكاتك الرقمية
-            <br>
-            <span>بسهولة وسرعة</span>
-        </h1>
+<div class="badge">
+⚡ اشتراكات رقمية بسهولة وسرعة
+</div>
 
-        <p>
-            مرحبًا بك في SUBDZ
-            <br>
-            اختر الخدمة والباقة المناسبة لك ثم تواصل معنا لإتمام الطلب.
-        </p>
+<h1>
 
-        <a href="#services" class="hero-button">
-            اكتشف العروض
-        </a>
+اشتراكاتك الرقمية
 
-    </section>
+<br>
 
+<span>
+بسهولة وسرعة
+</span>
 
-    <!-- =========================
-         SERVICES
-    ========================= -->
+</h1>
 
-    <section class="section" id="services">
+<p>
 
-        <div class="section-title">
+اختر الخدمة التي تريدها،
+ثم اختر مدة الاشتراك وتواصل معنا لإتمام الطلب.
 
-            <h2>
-                خدماتنا
-            </h2>
+</p>
 
-            <p>
-                اختر الخدمة ثم اضغط على الباقة التي تريدها
-            </p>
+<a
+href="#services"
+class="hero-button"
+>
+اكتشف العروض
+</a>
 
-        </div>
+</section>
 
 
-        <div class="products">
 
+<!-- =========================
+     SERVICES
+========================= -->
 
-            <!-- =====================
-                 NETFLIX
-            ====================== -->
+<section
+class="section"
+id="services"
+>
 
-            <div class="card netflix">
+<div class="section-title">
 
-                <div class="service-icon">
-                    N
-                </div>
+<h2>
+خدماتنا
+</h2>
 
-                <h3>
-                    Netflix
-                </h3>
+<p>
+اختر الخدمة ثم اختر الباقة المناسبة لك
+</p>
 
-                <p class="card-description">
-                    اختر مدة الاشتراك المناسبة لك.
-                </p>
+</div>
 
-                <p class="select-text">
-                    اضغط على الباقة لاختيارها
-                </p>
 
+<div class="products">
 
-                <div class="offers">
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Netflix', 'شهر واحد')"
-                    >
 
-                        <span class="offer-name">
-                            شهر واحد
-                        </span>
+<!-- =====================
+     NETFLIX
+===================== -->
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+<div class="card netflix">
 
-                    </div>
+<img
+src="netflix.png"
+alt="Netflix"
+class="service-image"
+>
 
+<div class="card-content">
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Netflix', '3 أشهر')"
-                    >
+<h3>
+Netflix
+</h3>
 
-                        <span class="offer-name">
-                            3 أشهر
-                        </span>
+<p class="card-description">
+استمتع بالمحتوى الترفيهي المناسب لك.
+</p>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+<p class="select-text">
+اضغط على الباقة لاختيارها
+</p>
 
-                    </div>
 
+<div class="offers">
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Netflix', '6 أشهر')"
-                    >
 
-                        <span class="offer-name">
-                            6 أشهر
-                        </span>
+<div
+class="offer"
+onclick="selectOffer(this,'Netflix','شهر واحد')"
+>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+<span class="offer-name">
+شهر واحد
+</span>
 
-                    </div>
+<span class="price">
+السعر عند الطلب
+</span>
 
-                </div>
+</div>
 
 
-                <button
-                    class="order-button"
-                    onclick="sendOrder('Netflix')"
-                >
-                    اختر العرض
-                </button>
+<div
+class="offer"
+onclick="selectOffer(this,'Netflix','3 أشهر')"
+>
 
-            </div>
+<span class="offer-name">
+3 أشهر
+</span>
 
+<span class="price">
+السعر عند الطلب
+</span>
 
-            <!-- =====================
-                 SHAHID
-            ====================== -->
+</div>
 
-            <div class="card shahid">
 
-                <div class="service-icon">
-                    ▶
-                </div>
+<div
+class="offer"
+onclick="selectOffer(this,'Netflix','6 أشهر')"
+>
 
-                <h3>
-                    Shahid
-                </h3>
+<span class="offer-name">
+6 أشهر
+</span>
 
-                <p class="card-description">
-                    اختر الباقة والمدة المناسبة لك.
-                </p>
+<span class="price">
+السعر عند الطلب
+</span>
 
-                <p class="select-text">
-                    اضغط على الباقة لاختيارها
-                </p>
+</div>
 
 
-                <div class="offers">
+</div>
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Shahid', 'شهر واحد')"
-                    >
 
-                        <span class="offer-name">
-                            شهر واحد
-                        </span>
+<button
+class="order-button"
+onclick="sendOrder('Netflix')"
+>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+💬 اختر العرض
 
-                    </div>
+</button>
 
+</div>
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Shahid', '3 أشهر')"
-                    >
+</div>
 
-                        <span class="offer-name">
-                            3 أشهر
-                        </span>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
 
-                    </div>
+<!-- =====================
+     SHAHID
+===================== -->
 
+<div class="card shahid">
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Shahid', '6 أشهر')"
-                    >
+<img
+src="shahid.png"
+alt="Shahid"
+class="service-image"
+>
 
-                        <span class="offer-name">
-                            6 أشهر
-                        </span>
+<div class="card-content">
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+<h3>
+Shahid
+</h3>
 
-                    </div>
+<p class="card-description">
+استمتع بالمحتوى العربي والترفيهي.
+</p>
 
-                </div>
+<p class="select-text">
+اضغط على الباقة لاختيارها
+</p>
 
 
-                <button
-                    class="order-button"
-                    onclick="sendOrder('Shahid')"
-                >
-                    اختر العرض
-                </button>
+<div class="offers">
 
-            </div>
 
+<div
+class="offer"
+onclick="selectOffer(this,'Shahid','شهر واحد')"
+>
 
-            <!-- =====================
-                 XBOX GAME PASS
-            ====================== -->
+<span class="offer-name">
+شهر واحد
+</span>
 
-            <div class="card xbox">
+<span class="price">
+السعر عند الطلب
+</span>
 
-                <div class="service-icon">
-                    X
-                </div>
+</div>
 
-                <h3>
-                    Xbox Game Pass
-                </h3>
 
-                <p class="card-description">
-                    اختر الباقة المناسبة لجهازك.
-                </p>
+<div
+class="offer"
+onclick="selectOffer(this,'Shahid','3 أشهر')"
+>
 
-                <p class="select-text">
-                    اضغط على الباقة لاختيارها
-                </p>
+<span class="offer-name">
+3 أشهر
+</span>
 
+<span class="price">
+السعر عند الطلب
+</span>
 
-                <div class="offers">
+</div>
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Xbox Game Pass', 'شهر واحد')"
-                    >
 
-                        <span class="offer-name">
-                            شهر واحد
-                        </span>
+<div
+class="offer"
+onclick="selectOffer(this,'Shahid','6 أشهر')"
+>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+<span class="offer-name">
+6 أشهر
+</span>
 
-                    </div>
+<span class="price">
+السعر عند الطلب
+</span>
 
+</div>
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Xbox Game Pass', '3 أشهر')"
-                    >
 
-                        <span class="offer-name">
-                            3 أشهر
-                        </span>
+</div>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
 
-                    </div>
+<button
+class="order-button"
+onclick="sendOrder('Shahid')"
+>
 
+💬 اختر العرض
 
-                    <div
-                        class="offer"
-                        onclick="selectOffer(this, 'Xbox Game Pass', '6 أشهر')"
-                    >
+</button>
 
-                        <span class="offer-name">
-                            6 أشهر
-                        </span>
+</div>
 
-                        <span class="price">
-                            السعر عند الطلب
-                        </span>
+</div>
 
-                    </div>
 
-                </div>
 
+<!-- =====================
+     XBOX
+===================== -->
 
-                <button
-                    class="order-button"
-                    onclick="sendOrder('Xbox Game Pass')"
-                >
-                    اختر العرض
-                </button>
+<div class="card xbox">
 
-            </div>
+<img
+src="xbox-game-pass.png"
+alt="Xbox Game Pass"
+class="service-image"
+>
 
+<div class="card-content">
 
-        </div>
+<h3>
+Xbox Game Pass
+</h3>
 
-    </section>
+<p class="card-description">
+مكتبة ألعاب متنوعة لعشاق الألعاب.
+</p>
 
+<p class="select-text">
+اضغط على الباقة لاختيارها
+</p>
 
-    <!-- =========================
-         HOW TO ORDER
-    ========================= -->
 
-    <section class="section">
+<div class="offers">
 
-        <div class="section-title">
 
-            <h2>
-                كيف تطلب؟
-            </h2>
+<div
+class="offer"
+onclick="selectOffer(this,'Xbox Game Pass','شهر واحد')"
+>
 
-            <p>
-                ثلاث خطوات بسيطة
-            </p>
+<span class="offer-name">
+شهر واحد
+</span>
 
-        </div>
+<span class="price">
+السعر عند الطلب
+</span>
 
+</div>
 
-        <div class="steps">
 
+<div
+class="offer"
+onclick="selectOffer(this,'Xbox Game Pass','3 أشهر')"
+>
 
-            <div class="step">
+<span class="offer-name">
+3 أشهر
+</span>
 
-                <div class="number">
-                    1
-                </div>
+<span class="price">
+السعر عند الطلب
+</span>
 
-                <h3>
-                    اختر الخدمة
-                </h3>
+</div>
 
-                <p>
-                    اختر Netflix أو Shahid أو Xbox Game Pass.
-                </p>
 
-            </div>
+<div
+class="offer"
+onclick="selectOffer(this,'Xbox Game Pass','6 أشهر')"
+>
 
+<span class="offer-name">
+6 أشهر
+</span>
 
-            <div class="step">
+<span class="price">
+السعر عند الطلب
+</span>
 
-                <div class="number">
-                    2
-                </div>
+</div>
 
-                <h3>
-                    اختر الباقة
-                </h3>
 
-                <p>
-                    اضغط على شهر واحد أو 3 أشهر أو 6 أشهر.
-                </p>
+</div>
 
-            </div>
 
+<button
+class="order-button"
+onclick="sendOrder('Xbox Game Pass')"
+>
 
-            <div class="step">
+💬 اختر العرض
 
-                <div class="number">
-                    3
-                </div>
+</button>
 
-                <h3>
-                    أرسل الطلب
-                </h3>
+</div>
 
-                <p>
-                    اضغط على اختر العرض للتواصل معنا عبر WhatsApp.
-                </p>
+</div>
 
-            </div>
 
+</div>
 
-        </div>
+</section>
 
 
-        <!-- CONTACT -->
 
-        <div class="contact">
+<!-- =========================
+     HOW TO ORDER
+========================= -->
 
-            <h2>
-                هل تحتاج إلى مساعدة؟
-            </h2>
+<section class="section">
 
-            <p>
-                تواصل معنا عبر WhatsApp وسنساعدك.
-            </p>
+<div class="section-title">
 
-            <button
-                class="order-button"
-                onclick="generalContact()"
-            >
-                💬 تواصل معنا
-            </button>
+<h2>
+كيف تطلب؟
+</h2>
 
-        </div>
+<p>
+عملية بسيطة وسريعة
+</p>
 
-    </section>
+</div>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<div class="steps">
 
-    <footer>
 
-        <p>
-            © 2026
-            <strong>SUBDZ</strong>
-            — جميع الحقوق محفوظة
-        </p>
+<div class="step">
 
-    </footer>
+<div class="number">
+1
+</div>
 
+<h3>
+اختر الخدمة
+</h3>
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+<p>
+اختر Netflix أو Shahid أو Xbox Game Pass.
+</p>
 
-    <script>
+</div>
 
-        /* رقم WhatsApp */
 
-        const whatsappNumber = "213549854480";
+<div class="step">
 
+<div class="number">
+2
+</div>
 
-        /* العروض المختارة */
+<h3>
+اختر الباقة
+</h3>
 
-        const selectedOffers = {};
+<p>
+اضغط على شهر واحد أو 3 أشهر أو 6 أشهر.
+</p>
 
+</div>
 
-        /* اختيار الباقة */
 
-        function selectOffer(element, service, duration) {
+<div class="step">
 
-            /*
-             * نبحث عن البطاقة التي ضغط عليها العميل
-             */
+<div class="number">
+3
+</div>
 
-            const card = element.closest(".card");
+<h3>
+أرسل الطلب
+</h3>
 
+<p>
+اضغط على اختر العرض وسيتم فتح WhatsApp.
+</p>
 
-            /*
-             * نزيل التحديد من جميع الباقات
-             * الموجودة داخل نفس البطاقة
-             */
+</div>
 
-            const offers = card.querySelectorAll(".offer");
 
-            offers.forEach(function(offer) {
+</div>
 
-                offer.classList.remove("selected");
 
-            });
 
+<!-- =========================
+     CONTACT
+========================= -->
 
-            /*
-             * تحديد الباقة التي ضغط عليها العميل
-             */
+<div class="contact">
 
-            element.classList.add("selected");
+<h2>
+هل تحتاج إلى مساعدة؟
+</h2>
 
+<p>
+تواصل معنا عبر WhatsApp
+</p>
 
-            /*
-             * حفظ الاختيار
-             */
+<button
+class="order-button"
+onclick="generalContact()"
+>
 
-            selectedOffers[service] = duration;
+💬 تواصل معنا
 
-        }
+</button>
 
+</div>
 
-        /* إرسال الطلب إلى WhatsApp */
+</section>
 
-        function sendOrder(service) {
 
-            const duration = selectedOffers[service];
 
+<!-- =========================
+     FOOTER
+========================= -->
 
-            /*
-             * إذا لم يختر العميل باقة
-             */
+<footer>
 
-            if (!duration) {
+<p>
 
-                alert("من فضلك اختر الباقة أولاً.");
+© 2026
 
-                return;
+<strong>
+SUBDZ
+</strong>
 
-            }
+— جميع الحقوق محفوظة
 
+</p>
 
-            /*
-             * إنشاء الرسالة
-             */
+</footer>
 
-            const message =
-                "السلام عليكم 👋\n\n" +
-                "أريد طلب خدمة من SUBDZ.\n\n" +
-                "الخدمة: " + service + "\n" +
-                "الباقة: " + duration + "\n\n" +
-                "أرسل لي السعر والتفاصيل من فضلك.";
 
 
-            /*
-             * إنشاء رابط WhatsApp
-             */
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
-            const whatsappURL =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                encodeURIComponent(message);
+<script>
 
 
-            /*
-             * فتح WhatsApp
-             */
+/*
+   رقم WhatsApp
+*/
 
-            window.open(
-                whatsappURL,
-                "_blank"
+const whatsappNumber =
+"213549854480";
+
+
+/*
+   حفظ الباقات المختارة
+*/
+
+const selectedOffers = {};
+
+
+/*
+   اختيار الباقة
+*/
+
+function selectOffer(
+    element,
+    service,
+    duration
+){
+
+    /*
+       البحث عن البطاقة
+    */
+
+    const card =
+        element.closest(".card");
+
+
+    /*
+       إزالة التحديد
+       من الباقات الأخرى
+    */
+
+    const offers =
+        card.querySelectorAll(".offer");
+
+
+    offers.forEach(
+        function(offer){
+
+            offer.classList.remove(
+                "selected"
             );
 
         }
+    );
 
 
-        /* التواصل العام */
+    /*
+       تحديد الباقة
+    */
 
-        function generalContact() {
-
-            const message =
-                "السلام عليكم 👋\n\n" +
-                "أريد الاستفسار عن خدمات SUBDZ.";
-
-
-            const whatsappURL =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                encodeURIComponent(message);
+    element.classList.add(
+        "selected"
+    );
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
+    /*
+       حفظ اختيار العميل
+    */
 
-        }
+    selectedOffers[service] =
+        duration;
 
-    </script>
+}
+
+
+/*
+   إرسال الطلب
+*/
+
+function sendOrder(service){
+
+    /*
+       الحصول على الباقة
+    */
+
+    const duration =
+        selectedOffers[service];
+
+
+    /*
+       إذا لم يتم اختيار باقة
+    */
+
+    if(!duration){
+
+        alert(
+            "من فضلك اختر الباقة أولاً."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       إنشاء رسالة WhatsApp
+    */
+
+    const message =
+
+        "السلام عليكم 👋\n\n" +
+
+        "أريد طلب خدمة من SUBDZ.\n\n" +
+
+        "الخدمة: " +
+        service +
+        "\n" +
+
+        "الباقة: " +
+        duration +
+        "\n\n" +
+
+        "أرسل لي السعر والتفاصيل من فضلك.";
+
+
+    /*
+       إنشاء رابط WhatsApp
+    */
+
+    const whatsappURL =
+
+        "https://wa.me/" +
+
+        whatsappNumber +
+
+        "?text=" +
+
+        encodeURIComponent(
+            message
+        );
+
+
+    /*
+       فتح WhatsApp
+    */
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/*
+   التواصل العام
+*/
+
+function generalContact(){
+
+    const message =
+
+        "السلام عليكم 👋\n\n" +
+
+        "أريد الاستفسار عن خدمات SUBDZ.";
+
+
+    const whatsappURL =
+
+        "https://wa.me/" +
+
+        whatsappNumber +
+
+        "?text=" +
+
+        encodeURIComponent(
+            message
+        );
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+</script>
 
 
 </body>
-    </html>
+
+</html>
