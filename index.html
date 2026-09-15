@@ -1,559 +1,282 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>SUBDZ | الاشتراكات الرقمية</title>
-  <meta name="description" content="SUBDZ - متجر الاشتراكات الرقمية">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: #070707;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #0d0d0d;
-      border-bottom: 1px solid #222;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar {
-      max-width: 1100px;
-      margin: auto;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 30px;
-      font-weight: 900;
-      color: #e50914;
-    }
-
-    .logo span {
-      color: #fff;
-    }
-
-    .nav-button {
-      background: #e50914;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 75px 20px 60px;
-      background:
-        radial-gradient(circle at center, #241010 0%, #070707 55%);
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 8vw, 68px);
-      margin-bottom: 15px;
-    }
-
-    .hero h1 span {
-      color: #e50914;
-    }
-
-    .hero p {
-      color: #aaa;
-      font-size: 18px;
-      max-width: 650px;
-      margin: auto;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      margin-top: 28px;
-      background: #e50914;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .section-title h2 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-
-    .section-title p {
-      color: #888;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: #111;
-      border: 1px solid #292929;
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #e50914;
-    }
-
-    .service-icon {
-      width: 85px;
-      height: 85px;
-      margin: 0 auto 18px;
-      border-radius: 22px;
-      background: #1c1c1c;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 38px;
-      font-weight: bold;
-    }
-
-    .netflix .service-icon {
-      color: #e50914;
-    }
-
-    .shahid .service-icon {
-      color: #20d66b;
-    }
-
-    .xbox .service-icon {
-      color: #75c043;
-    }
-
-    .card h3 {
-      font-size: 25px;
-      margin-bottom: 8px;
-    }
-
-    .card-description {
-      color: #999;
-      margin-bottom: 20px;
-    }
-
-    .offers {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .offer {
-      background: #191919;
-      border: 1px solid #292929;
-      padding: 13px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .price {
-      color: #e50914;
-      font-weight: bold;
-    }
-
-    .order-btn {
-      width: 100%;
-      border: none;
-      background: #e50914;
-      color: white;
-      padding: 14px;
-      border-radius: 11px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .order-btn:hover {
-      background: #ff1b26;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .step {
-      background: #111;
-      border: 1px solid #252525;
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .number {
-      width: 45px;
-      height: 45px;
-      background: #e50914;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .step p {
-      color: #888;
-    }
-
-    .contact {
-      text-align: center;
-      margin-top: 30px;
-      padding: 45px 20px;
-      background: #101010;
-      border-radius: 20px;
-      border: 1px solid #242424;
-    }
-
-    .contact h2 {
-      margin-bottom: 10px;
-    }
-
-    .contact p {
-      color: #999;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      margin-top: 50px;
-      padding: 30px 20px;
-      text-align: center;
-      background: #0d0d0d;
-      border-top: 1px solid #222;
-      color: #777;
-    }
-
-    footer strong {
-      color: #e50914;
-    }
-
-    @media (max-width: 800px) {
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 55px;
-      }
-
-      .navbar {
-        padding: 14px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo">SUB<span>DZ</span></div>
-
-      <a href="#services" class="nav-button">
-        العروض
-      </a>
-    </nav>
-  </header>
-
-
-  <section class="hero">
-
-    <h1>
-      اشتراكاتك الرقمية
-      <br>
-      <span>بسهولة وسرعة</span>
-    </h1>
-
-    <p>
-      مرحبًا بك في SUBDZ
-      <br>
-      اختر خدمتك وباقتك المناسبة ثم تواصل معنا لإتمام الطلب.
-    </p>
-
-    <a href="#services" class="hero-btn">
-      اكتشف العروض
-    </a>
-
-  </section>
-
-
-  <section class="section" id="services">
-
-    <div class="section-title">
-      <h2>خدماتنا</h2>
-      <p>اختر الخدمة التي تريدها</p>
-    </div>
-
-
-    <div class="products">
-
-
-      <!-- NETFLIX -->
-      <div class="card netflix">
-
-        <div class="service-icon">
-          N
-        </div>
-
-        <h3>Netflix</h3>
-
-        <p class="card-description">
-          اختر مدة الاشتراك المناسبة لك.
-        </p>
-
-        <div class="offers">
-
-          <div class="offer">
-            <span>شهر واحد</span>
-            <span class="price">___ دج</span>
-          </div>
-
-          <div class="offer">
-            <span>3 أشهر</span>
-            <span class="price">___ دج</span>
-          </div>
-
-          <div class="offer">
-            <span>6 أشهر</span>
-            <span class="price">___ دج</span>
-          </div>
-
-        </div>
-
-        <button
-          class="order-btn"
-          onclick="order('Netflix')">
-          اطلب الآن
-        </button>
-
-      </div>
-
-
-      <!-- SHAHID -->
-      <div class="card shahid">
-
-        <div class="service-icon">
-          ▶
-        </div>
-
-        <h3>Shahid</h3>
-
-        <p class="card-description">
-          اختر الباقة والمدة المناسبة لك.
-        </p>
-
-        <div class="offers">
-
-          <div class="offer">
-            <span>شهر واحد</span>
-            <span class="price">___ دج</span>
-          </div>
-
-          <div class="offer">
-            <span>3 أشهر</span>
-            <span class="price">___ دج</span>
-          </div>
-
-          <div class="offer">
-            <span>6 أشهر</span>
-            <span class="price">___ دج</span>
-          </div>
-
-        </div>
-
-        <button
-          class="order-btn"
-          onclick="order('Shahid')">
-          اطلب الآن
-        </button>
-
-      </div>
-
-
-      <!-- XBOX GAME PASS -->
-      <div class="card xbox">
-
-        <div class="service-icon">
-          X
-        </div>
-
-        <h3>Xbox Game Pass</h3>
-
-        <p class="card-description">
-          اختر الباقة المتوفرة لجهازك.
-        </p>
-
-        <div class="offers">
-
-          <div class="offer">
-            <span>شهر واحد</span>
-            <span class="price">___ دج</span>
-          </div>
-
-          <div class="offer">
-            <span>3 أشهر</span>
-            <span class="price">___ دج</span>
-          </div>
-
-          <div class="offer">
-            <span>6 أشهر</span>
-            <span class="price">___ دج</span>
-          </div>
-
-        </div>
-
-        <button
-          class="order-btn"
-          onclick="order('Xbox Game Pass')">
-          اطلب الآن
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <div class="section-title">
-      <h2>كيف تطلب؟</h2>
-      <p>عملية بسيطة وسريعة</p>
-    </div>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="number">1</div>
-        <h3>اختر الخدمة</h3>
-        <p>
-          اختر Netflix أو Shahid أو Xbox Game Pass.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="number">2</div>
-        <h3>اختر الباقة</h3>
-        <p>
-          اختر مدة الاشتراك والعرض المناسب.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="number">3</div>
-        <h3>تواصل معنا</h3>
-        <p>
-          اضغط على اطلب الآن للتواصل معنا عبر WhatsApp.
-        </p>
-      </div>
-
-    </div>
-
-
-    <div class="contact">
-
-      <h2>هل تحتاج إلى مساعدة؟</h2>
-
-      <p>
-        تواصل معنا وسنساعدك في اختيار العرض المناسب.
-      </p>
-
-      <button
-        class="order-btn"
-        style="max-width:300px;"
-        onclick="order('استفسار عام')">
-        تواصل معنا عبر WhatsApp
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <footer>
-
-    <p>
-      © 2026 <strong>SUBDZ</strong>
-      — جميع الحقوق محفوظة
-    </p>
-
-  </footer>
-
-
-  <script>
-
-    /*
-      ضع رقم WhatsApp الخاص بك هنا
-      مثال:
-      213551234567
-    */
-
-    const whatsappNumber = "213XXXXXXXXX";
-
-
-    function order(service) {
-
-      const message =
-        "السلام عليكم 👋\n\n" +
-        "أريد الاستفسار عن خدمة من SUBDZ.\n\n" +
-        "الخدمة: " + service + "\n\n" +
-        "أرسل لي الباقات والأسعار المتاحة من فضلك.";
-
-      const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-      window.open(whatsappURL, "_blank");
-
-    }
-
-  </script>
-
-</body>
-</html>       
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUBDZ | الاشتراكات الرقمية</title>
+
+<meta name="description" content="SUBDZ - اشتراكات رقمية وخدمات ترفيهية">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#070707;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(10,10,10,.95);
+    border-bottom:1px solid #242424;
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    color:#e50914;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.nav-button{
+    background:#e50914;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:85px 20px 75px;
+    background:
+    radial-gradient(circle at center,#351010 0%,#100707 35%,#070707 70%);
+}
+
+.hero-badge{
+    display:inline-block;
+    background:#171717;
+    border:1px solid #333;
+    color:#ccc;
+    padding:8px 16px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:clamp(40px,8vw,70px);
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#e50914;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:18px;
+    max-width:650px;
+    margin:auto;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:#e50914;
+    color:#fff;
+    padding:15px 30px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+.section{
+    max-width:1150px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#888;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:22px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#e50914;
+    box-shadow:0 10px 35px rgba(229,9,20,.12);
+}
+
+.service-icon{
+    width:85px;
+    height:85px;
+    margin:0 auto 18px;
+    border-radius:22px;
+    background:#1b1b1b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    font-weight:900;
+}
+
+.netflix .service-icon{
+    color:#e50914;
+}
+
+.shahid .service-icon{
+    color:#21d66b;
+}
+
+.xbox .service-icon{
+    color:#78c043;
+}
+
+.card h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.card-description{
+    color:#999;
+    margin-bottom:22px;
+}
+
+/* OFFERS */
+
+.offers{
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    margin-bottom:20px;
+}
+
+.offer{
+    background:#191919;
+    border:1px solid #2b2b2b;
+    border-radius:12px;
+    padding:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.offer-name{
+    color:#ddd;
+    font-weight:bold;
+}
+
+.price{
+    color:#e50914;
+    font-weight:bold;
+}
+
+/* BUTTON */
+
+.order-btn{
+    width:100%;
+    border:none;
+    background:#e50914;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#ff1723;
+    transform:translateY(-2px);
+}
+
+/* STEPS */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.step{
+    background:#111;
+    border:1px solid #252525;
+    border-radius:18px;
+    padding:28px 20px;
+    text-align:center;
+}
+
+.number{
+    width:48px;
+    height:48px;
+    background:#e50914;
+    border-radius:50%;
+    margin:0 auto 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.step p{
+    color:#888;
+   
