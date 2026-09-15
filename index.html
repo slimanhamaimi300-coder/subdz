@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SUBDZ | الاشتراكات الرقمية</title>
 
-<meta name="description" content="SUBDZ - اشتراكات رقمية وخدمات ترفيهية">
+<meta name="description" content="SUBDZ - متجر الاشتراكات الرقمية">
 
 <style>
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -22,7 +24,7 @@ html{
 body{
     font-family:Arial,Tahoma,sans-serif;
     background:#070707;
-    color:#fff;
+    color:white;
     line-height:1.6;
 }
 
@@ -32,9 +34,8 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(10,10,10,.95);
-    border-bottom:1px solid #242424;
-    backdrop-filter:blur(10px);
+    background:#0d0d0d;
+    border-bottom:1px solid #252525;
 }
 
 .navbar{
@@ -53,12 +54,12 @@ header{
 }
 
 .logo span{
-    color:#fff;
+    color:white;
 }
 
 .nav-button{
     background:#e50914;
-    color:#fff;
+    color:white;
     text-decoration:none;
     padding:10px 20px;
     border-radius:10px;
@@ -69,20 +70,19 @@ header{
 
 .hero{
     text-align:center;
-    padding:85px 20px 75px;
+    padding:80px 20px;
     background:
-    radial-gradient(circle at center,#351010 0%,#100707 35%,#070707 70%);
+    radial-gradient(circle at center,#351010 0%,#120707 35%,#070707 70%);
 }
 
-.hero-badge{
+.badge{
     display:inline-block;
     background:#171717;
     border:1px solid #333;
-    color:#ccc;
     padding:8px 16px;
     border-radius:30px;
+    color:#ccc;
     margin-bottom:20px;
-    font-size:14px;
 }
 
 .hero h1{
@@ -106,16 +106,11 @@ header{
     display:inline-block;
     margin-top:30px;
     background:#e50914;
-    color:#fff;
+    color:white;
+    text-decoration:none;
     padding:15px 30px;
     border-radius:12px;
-    text-decoration:none;
     font-weight:bold;
-    transition:.3s;
-}
-
-.hero-btn:hover{
-    transform:translateY(-3px);
 }
 
 /* SECTIONS */
@@ -158,9 +153,8 @@ header{
 }
 
 .card:hover{
-    transform:translateY(-7px);
+    transform:translateY(-6px);
     border-color:#e50914;
-    box-shadow:0 10px 35px rgba(229,9,20,.12);
 }
 
 .service-icon{
@@ -181,7 +175,7 @@ header{
 }
 
 .shahid .service-icon{
-    color:#21d66b;
+    color:#20d66b;
 }
 
 .xbox .service-icon{
@@ -215,7 +209,6 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:10px;
 }
 
 .offer-name{
@@ -226,6 +219,7 @@ header{
 .price{
     color:#e50914;
     font-weight:bold;
+    font-size:14px;
 }
 
 /* BUTTON */
@@ -240,12 +234,6 @@ header{
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    transition:.3s;
-}
-
-.order-btn:hover{
-    background:#ff1723;
-    transform:translateY(-2px);
 }
 
 /* STEPS */
@@ -279,4 +267,485 @@ header{
 
 .step p{
     color:#888;
-   
+    margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    margin-top:45px;
+    padding:45px 20px;
+    background:#101010;
+    border:1px solid #252525;
+    border-radius:22px;
+}
+
+.contact p{
+    color:#888;
+    margin:10px 0 22px;
+}
+
+.contact .order-btn{
+    max-width:320px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:30px;
+    padding:30px 20px;
+    text-align:center;
+    background:#0d0d0d;
+    border-top:1px solid #222;
+    color:#777;
+}
+
+footer strong{
+    color:#e50914;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:65px 18px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .section{
+        padding:45px 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+SUB<span>DZ</span>
+</div>
+
+<a href="#services" class="nav-button">
+العروض
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="badge">
+⚡ خدمات رقمية بسرعة وسهولة
+</div>
+
+<h1>
+اشتراكاتك الرقمية
+<br>
+<span>بسهولة وسرعة</span>
+</h1>
+
+<p>
+مرحبًا بك في SUBDZ
+<br>
+اختر الخدمة والباقـة المناسبة لك ثم تواصل معنا لإتمام الطلب.
+</p>
+
+<a href="#services" class="hero-btn">
+اكتشف العروض
+</a>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+<div class="section-title">
+
+<h2>
+خدماتنا
+</h2>
+
+<p>
+اختر الخدمة والباقـة المناسبة لك
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- NETFLIX -->
+
+<div class="card netflix">
+
+<div class="service-icon">
+N
+</div>
+
+<h3>
+Netflix
+</h3>
+
+<p class="card-description">
+اختر مدة الاشتراك المناسبة لك.
+</p>
+
+<div class="offers">
+
+<div class="offer">
+<span class="offer-name">
+شهر واحد
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+
+<div class="offer">
+<span class="offer-name">
+3 أشهر
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+
+<div class="offer">
+<span class="offer-name">
+6 أشهر
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+</div>
+
+<button
+class="order-btn"
+onclick="order('Netflix','شهر واحد')">
+
+اختر العرض
+
+</button>
+
+</div>
+
+
+<!-- SHAHID -->
+
+<div class="card shahid">
+
+<div class="service-icon">
+▶
+</div>
+
+<h3>
+Shahid
+</h3>
+
+<p class="card-description">
+اختر الباقة والمدة المناسبة لك.
+</p>
+
+<div class="offers">
+
+<div class="offer">
+<span class="offer-name">
+شهر واحد
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+
+<div class="offer">
+<span class="offer-name">
+3 أشهر
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+
+<div class="offer">
+<span class="offer-name">
+6 أشهر
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+</div>
+
+<button
+class="order-btn"
+onclick="order('Shahid','شهر واحد')">
+
+اختر العرض
+
+</button>
+
+</div>
+
+
+<!-- XBOX -->
+
+<div class="card xbox">
+
+<div class="service-icon">
+X
+</div>
+
+<h3>
+Xbox Game Pass
+</h3>
+
+<p class="card-description">
+اختر الباقة المناسبة لجهازك.
+</p>
+
+<div class="offers">
+
+<div class="offer">
+<span class="offer-name">
+شهر واحد
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+
+<div class="offer">
+<span class="offer-name">
+3 أشهر
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+
+<div class="offer">
+<span class="offer-name">
+6 أشهر
+</span>
+
+<span class="price">
+السعر عند الطلب
+</span>
+</div>
+
+</div>
+
+<button
+class="order-btn"
+onclick="order('Xbox Game Pass','شهر واحد')">
+
+اختر العرض
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW TO ORDER -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+كيف تطلب؟
+</h2>
+
+<p>
+ثلاث خطوات بسيطة
+</p>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="number">
+1
+</div>
+
+<h3>
+اختر الخدمة
+</h3>
+
+<p>
+اختر Netflix أو Shahid أو Xbox Game Pass.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+2
+</div>
+
+<h3>
+اختر الباقة
+</h3>
+
+<p>
+اختر مدة الاشتراك والعرض المناسب.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+3
+</div>
+
+<h3>
+تواصل معنا
+</h3>
+
+<p>
+اضغط على زر الطلب للتواصل معنا عبر WhatsApp.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="contact">
+
+<h2>
+هل تحتاج إلى مساعدة؟
+</h2>
+
+<p>
+تواصل معنا وسنساعدك في اختيار العرض المناسب.
+</p>
+
+<button
+class="order-btn"
+onclick="order('استفسار عام','')">
+
+💬 تواصل معنا عبر WhatsApp
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026
+<strong>SUBDZ</strong>
+— جميع الحقوق محفوظة
+</p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<script>
+
+const whatsappNumber = "213549854480";
+
+function order(service,duration){
+
+let message =
+"السلام عليكم 👋\n\n" +
+"أريد طلب خدمة من SUBDZ.\n\n" +
+"الخدمة: " + service + "\n";
+
+if(duration !== ""){
+
+message +=
+"الباقة: " + duration + "\n";
+
+}
+
+message +=
+"\nأرسل لي السعر والتفاصيل من فضلك.";
+
+const whatsappURL =
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+}
+
+</script>
+
+
+</body>
+    </html>
